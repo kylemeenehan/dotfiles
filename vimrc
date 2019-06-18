@@ -16,28 +16,37 @@ let g:ale_fixers = {'typescript': ['prettier'], 'javascript': ['eslint'], 'json'
 let g:ale_fix_on_save = 1
 " Only run linters named in ale_linters settings.
 let g:ale_linters_explicit = 1
+
 Plugin 'ctrlpvim/ctrlp.vim'
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
+
+
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
+
 Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
+
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_use_clangd=0
+
+" TODO: configure for dart
 " let g:ycm_dart_bin_folder_path = '~/Library/flutter/bin'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['typescript']
 " Plugin 'natebosch/vim-lsc'
 " let g:lsc_server_commands = {'dart': 'dart_language_server'}
+
+" TODO: configure auto-pairs effectively
+Plugin 'jiangmiao/auto-pairs'
+
+Plugin 'sheerun/vim-polyglot'
 Plugin 'alvan/vim-closetag'
-Plugin 'JamshedVesuna/vim-markdown-preview'
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_github=1
 
 " Python
 " Plugin 'python-mode/python-mode'
@@ -71,6 +80,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" TODO: install matchit
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
@@ -111,11 +121,6 @@ set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$'
-  \ }
 
 " Make it obvious where 80 characters is
 " set textwidth=80
@@ -182,6 +187,7 @@ let g:matchparen_timeout = 2
 let g:matchparen_insert_timeout = 2
 
 " Folding ----------------------------------------------------------------------
+" TODO: configure folding
 " set foldmethod=indent
 " set foldcolumn=3
 
