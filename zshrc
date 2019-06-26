@@ -102,6 +102,8 @@ export PATH="/usr/local/lib/node_modules:$PATH"
 export NODE_OPTIONS=--max_old_space_size=4096
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/kylemeenehan/credentials/gcp-1.json"
 export SHELL="/bin/zsh"
+export GOBIN=$HOME/go/bin
+export PATH=$HOME/go/bin:$PATH
 # export NPM_CONFIG_PREFIX=~/.npm-global
 
 alias python=python3
