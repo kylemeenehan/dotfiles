@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kylemeenehan/.oh-my-zsh"
+export ZSH="/home/kyle/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,7 +109,7 @@ export PATH=$HOME/go/bin:$PATH
 alias python=python3
 alias clean-branches='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias ds='du -sh */ | sort -h'
-alias git=hub
+# alias git=hub
 alias ta='tmux attach -t'
 alias tk='tmux kill-session -t'
 alias tn='tmux new -s'
@@ -118,9 +118,11 @@ alias coffee='caffeinate -t 7200'
 alias spelltex='aspell check --mode=tex'
 alias mdev='mux start dev -n'
 alias htop-workers='mux htop-workers'
+alias robo3t='nohup /usr/local/bin/robo3t/bin/robo3t &>/dev/null &'
 
-source ~/.bin/tmuxinator.zsh
+source ~/.tmuxinator.zsh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/kylemeenehan/.sdkman"
-[[ -s "/Users/kylemeenehan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/kylemeenehan/.sdkman/bin/sdkman-init.sh"
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+

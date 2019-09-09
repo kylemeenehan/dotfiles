@@ -10,12 +10,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 let g:ale_linters = {'javascript': ['eslint'], 'dart': ['dartanalyzer'], 'json': ['prettier']}
 let g:ale_fixers = {'typescript': ['prettier'], 'javascript': ['eslint'], 'json': ['prettier']}
 let g:ale_fix_on_save = 1
 " Only run linters named in ale_linters settings.
-let g:ale_linters_explicit = 1
+" let g:ale_linters_explicit = 1
 
 Plugin 'ctrlpvim/ctrlp.vim'
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
@@ -36,6 +36,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_use_clangd=0
+nnoremap ff :YcmCompleter GoTo<CR>
 
 " TODO: configure for dart
 " let g:ycm_dart_bin_folder_path = '~/Library/flutter/bin'
@@ -49,12 +50,18 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'alvan/vim-closetag'
 
 " Python
-" Plugin 'python-mode/python-mode'
-" let g:pymode_options_max_line_length=120
+Plugin 'python-mode/python-mode'
+let g:pymode_options_max_line_length=120
 " Plugin 'cjrh/vim-conda'
 " let g:conda_startup_msg_suppress = 1
 " Plugin 'davidhalter/jedi-vim'
 " let g:jedi#completions_enabled = 0
+
+Plugin 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview=1
+
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -72,7 +79,7 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set ignorecase    " Ignore case for search
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -188,8 +195,10 @@ let g:matchparen_insert_timeout = 2
 
 " Folding ----------------------------------------------------------------------
 " TODO: configure folding
-" set foldmethod=indent
-" set foldcolumn=3
+set foldmethod=indent
+set foldcolumn=3
+set foldlevel=99
+nnoremap <space> za
 
 syntax enable
 syntax on
