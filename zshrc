@@ -119,6 +119,7 @@ alias spelltex='aspell check --mode=tex'
 alias mdev='mux start dev -n'
 alias htop-workers='mux htop-workers'
 alias robo3t='nohup /usr/local/bin/robo3t/bin/robo3t &>/dev/null &'
+alias postman='nohup /opt/Postman/Postman &>/dev/null &'
 
 source ~/.tmuxinator.zsh
 
