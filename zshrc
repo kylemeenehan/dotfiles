@@ -104,6 +104,8 @@ export GOOGLE_APPLICATION_CREDENTIALS="/Users/kylemeenehan/credentials/gcp-1.jso
 export SHELL="/bin/zsh"
 export GOBIN=$HOME/go/bin
 export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=/snap/bin:$PATH
 # export NPM_CONFIG_PREFIX=~/.npm-global
 
 alias python=python3

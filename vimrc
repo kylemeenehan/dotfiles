@@ -79,6 +79,7 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set ignorecase    " Ignore case for search
+set nohlsearch    " Don't persist highlighting for search
 set clipboard=unnamedplus
 
 " Switch syntax highlighting on, when the terminal has colors
