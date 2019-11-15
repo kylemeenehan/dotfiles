@@ -102,10 +102,11 @@ export PATH="/usr/local/lib/node_modules:$PATH"
 export NODE_OPTIONS=--max_old_space_size=4096
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/kylemeenehan/credentials/gcp-1.json"
 export SHELL="/bin/zsh"
-export GOBIN=$HOME/go/bin
-export PATH=$HOME/go/bin:$PATH
+export GOBIN=/usr/local/go/bin
+export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/snap/bin:$PATH
+export PATH=$HOME/bin/handy-scripts:$PATH
 # export NPM_CONFIG_PREFIX=~/.npm-global
 
 alias python=python3
@@ -118,14 +119,16 @@ alias tn='tmux new -s'
 alias itxdev-tunnel='ssh -L 8123:itxdev.atajo.io:9005 jump.atajo.io'
 alias coffee='caffeinate -t 7200'
 alias spelltex='aspell check --mode=tex'
-alias mdev='mux start dev -n'
+alias mdev='tmuxinator start dev -n'
 alias htop-workers='mux htop-workers'
-alias robo3t='nohup /usr/local/bin/robo3t/bin/robo3t &>/dev/null &'
-alias postman='nohup /opt/Postman/Postman &>/dev/null &'
-
-source ~/.tmuxinator.zsh
+alias robo3t='nohup /usr/local/robo3t/bin/robo3t &>/dev/null &'
+alias postman='nohup /usr/local/Postman/Postman &>/dev/null &'
+alias node10='sudo docker run --rm -ti node:10-alpine -v $(pwd):/'
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
