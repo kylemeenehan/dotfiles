@@ -107,6 +107,7 @@ export PATH=/usr/local/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/snap/bin:$PATH
 export PATH=$HOME/bin/handy-scripts:$PATH
+export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
 # export NPM_CONFIG_PREFIX=~/.npm-global
 
 alias python=python3
