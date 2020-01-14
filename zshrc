@@ -96,7 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-export PATH=$HOME/bin:/usr/local/bin:$HOME/Library/Android/sdk/platform-tools:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/build-tools/27.0.3:$HOME/Library/flutter/bin:$HOME/anaconda3/bin:$HOME/.sonar-scanner/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/build-tools/27.0.3:$HOME/Library/flutter/bin:$HOME/anaconda3/bin:$HOME/.sonar-scanner/bin:$PATH
 export PATH="/miniconda3/bin:$HOME/.pub-cache/bin:$PATH"
 export PATH="/usr/local/lib/node_modules:$PATH"
 export NODE_OPTIONS=--max_old_space_size=4096
@@ -109,6 +109,10 @@ export PATH=/snap/bin:$PATH
 export PATH=$HOME/bin/handy-scripts:$PATH
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
 # export NPM_CONFIG_PREFIX=~/.npm-global
+#
+export ANDROID_HOME=/home/kyle/Android/Sdk
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
+# export JAVA_HOME=/usr/lib/jvm/default-java/bin/javac
 
 alias python=python3
 alias clean-branches='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
@@ -124,7 +128,11 @@ alias mdev='tmuxinator start dev -n'
 alias htop-workers='mux htop-workers'
 alias robo3t='nohup /usr/local/robo3t/bin/robo3t &>/dev/null &'
 alias postman='nohup /usr/local/Postman/Postman &>/dev/null &'
+alias studio='nohup ~/apps/android-studio/bin/studio.sh &>/dev/null &'
 alias node10='sudo docker run --rm -ti node:10-alpine -v $(pwd):/'
+export tlmgr=/usr/local/texlive/2019/bin/x86_64-linux/tlmgr
+
+eval "$(dircolors ~/.dircolors)"
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
@@ -133,3 +141,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/kyle/.sdkman"
+[[ -s "/home/kyle/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kyle/.sdkman/bin/sdkman-init.sh"
