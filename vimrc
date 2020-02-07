@@ -1,6 +1,7 @@
 set encoding=utf-8
 set nocompatible              " be iMproved, required
-filetype off                  " required
+" TODO: confirm this filetype off behaviour
+filetype off                  " required for Vundle
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -11,9 +12,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dense-analysis/ale'
-let g:ale_linters = {'javascript': ['eslint'], 'dart': ['dartanalyzer'], 'json': ['prettier']}
-let g:ale_fixers = {'typescript': ['prettier'], 'javascript': ['eslint'], 'json': ['prettier']}
-let g:ale_fix_on_save = 1
 " Only run linters named in ale_linters settings.
 " let g:ale_linters_explicit = 1
 
@@ -35,8 +33,10 @@ Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_use_clangd=0
+" let g:ycm_use_clangd=0
 nnoremap ff :YcmCompleter GoTo<CR>
+nnoremap fi :YcmCompleter FixIt<CR>
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " TODO: configure for dart
 " let g:ycm_dart_bin_folder_path = '~/Library/flutter/bin'
@@ -50,8 +50,8 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'alvan/vim-closetag'
 
 " Python
-Plugin 'python-mode/python-mode'
-let g:pymode_options_max_line_length=120
+" Plugin 'python-mode/python-mode'
+" let g:pymode_options_max_line_length=120
 " Plugin 'cjrh/vim-conda'
 " let g:conda_startup_msg_suppress = 1
 " Plugin 'davidhalter/jedi-vim'
@@ -63,7 +63,8 @@ let g:SimpylFold_docstring_preview=1
 Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
-filetype plugin indent on
+
+filetype plugin indent on " Vundle is done now, we can move on with life
 
 " Leader
 let mapleader = " "
@@ -87,14 +88,6 @@ set clipboard=unnamedplus
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
-
-" TODO: install matchit
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
-filetype plugin indent on
 
 augroup vimrcEx
   autocmd!
@@ -130,37 +123,17 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
-" Make it obvious where 80 characters is
-" set textwidth=80
-" set colorcolumn=+1
+" Make it obvious where 120 characters is
+set textwidth=120
+set colorcolumn=+1
 
 " Numbers
 set number
 set numberwidth=5
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
 
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
-
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<space>
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -208,3 +181,5 @@ let g:solarized_termcolors=256
 colorscheme solarized
 
 let g:asmsyntax="ia64"
+
+filetype plugin indent on

@@ -130,6 +130,7 @@ alias robo3t='nohup /usr/local/robo3t/bin/robo3t &>/dev/null &'
 alias postman='nohup /usr/local/Postman/Postman &>/dev/null &'
 alias studio='nohup ~/apps/android-studio/bin/studio.sh &>/dev/null &'
 alias node10='sudo docker run --rm -ti node:10-alpine -v $(pwd):/'
+alias refresh-input='sudo udevadm trigger'
 export tlmgr=/usr/local/texlive/2019/bin/x86_64-linux/tlmgr
 
 eval "$(dircolors ~/.dircolors)"
