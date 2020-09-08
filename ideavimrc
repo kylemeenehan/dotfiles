@@ -1,0 +1,41 @@
+set surround
+set commentary
+set ideajoin
+set easymotion
+
+set relativenumber
+set number
+
+let mapleader = " "
+" nmap <space> <Leader>
+
+set ignorecase    " Ignore case for search
+set incsearch     " do incremental searching
+set nohlsearch    " Don't persist highlighting for search
+set clipboard=unnamedplus
+set clipboard+=ideaput
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap ff :action GotoDeclaration<CR>
+
+" Easier Escape
+imap jk <Esc>
+imap kj <Esc>
+
+
+" nnoremap <space>j :action CollapseBlock<CR>
+nnoremap <Leader>j :action CollapseRegionRecursively<CR>
+nnoremap <Leader><S-j> :action CollapseRegion<CR>
+nnoremap <Leader>k :action ExpandRegion<CR>
+nnoremap <Leader><S-k> :action ExpandRegionRecursively<CR>
+
+" movement between tabs
+nnoremap <C-s>l :action NextTab<CR>
+nnoremap <C-s>h :action PreviousTab<CR>
+
+" views
+nnoremap <C-s>z :action ToggleFullScreen<CR>
