@@ -6,6 +6,12 @@ echo $DIR
 
 declare -A links=(
   ["vim/ftplugin"]="$HOME/.vim/ftplugin"
+  [""]="$HOME/."
+  [""]="$HOME/."
+  [""]="$HOME/."
+  [""]="$HOME/."
+  [""]="$HOME/."
+  [""]="$HOME/."
 )
 
 for link in "${!links[@]}"; do

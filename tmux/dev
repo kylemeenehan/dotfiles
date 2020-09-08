@@ -1,0 +1,4 @@
+send "vim ." ENTER
+splitw -l 13 -c '#{pane_current_path}'
+send "git status" ENTER
+splitw -h -c '#{pane_current_path}'

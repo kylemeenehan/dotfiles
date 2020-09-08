@@ -32,7 +32,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 " let g:ycm_use_clangd=0
 nnoremap ff :YcmCompleter GoTo<CR>
 nnoremap fi :YcmCompleter FixIt<CR>
@@ -46,6 +46,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " TODO: configure auto-pairs effectively
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'fatih/vim-go'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'alvan/vim-closetag'
 
@@ -59,6 +60,7 @@ Plugin 'alvan/vim-closetag'
 
 Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
+
 
 Plugin 'altercation/vim-colors-solarized'
 
@@ -129,7 +131,7 @@ set colorcolumn=+1
 
 " Numbers
 set number
-set numberwidth=5
+set numberwidth=3
 
 
 " Switch between the last two files
@@ -170,7 +172,7 @@ let g:matchparen_insert_timeout = 2
 " Folding ----------------------------------------------------------------------
 " TODO: configure folding
 set foldmethod=indent
-set foldcolumn=3
+set foldcolumn=2
 set foldlevel=99
 nnoremap <space> za
 
@@ -183,3 +185,16 @@ colorscheme solarized
 let g:asmsyntax="ia64"
 
 filetype plugin indent on
+
+set mouse=a
+set lazyredraw
+set complete=.
+set noerrorbells
+set visualbell
+
+set autoread
+au CursorHold,CursorHoldI * checktime
+au FocusGained,BufEnter * :checktime
+
+set completeopt+=menuone   " Show the completions UI even with only 1 item
+set completeopt+=noinsert  " Don't insert text automatically

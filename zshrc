@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 #
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/build-tools/27.0.3:$HOME/Library/flutter/bin:$HOME/anaconda3/bin:$HOME/.sonar-scanner/bin:$PATH
+export PATH=$PATH:/sbin
 export PATH="/miniconda3/bin:$HOME/.pub-cache/bin:$PATH"
 export PATH="/usr/local/lib/node_modules:$PATH"
 export NODE_OPTIONS=--max_old_space_size=4096
@@ -108,13 +109,17 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=/snap/bin:$PATH
 export PATH=$HOME/bin/handy-scripts:$PATH
 export PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
+export PATH=$HOME/lib/flutter/bin:$PATH
+
 # export NPM_CONFIG_PREFIX=~/.npm-global
+# export JAVA_HOME=/usr/lib/jvm/default-java/bin/javac
 #
 export ANDROID_HOME=/home/kyle/Android/Sdk
-export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$PATH
-# export JAVA_HOME=/usr/lib/jvm/default-java/bin/javac
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 alias python=python3
+alias open=nautilus # TODO: make this mac safe
 alias clean-branches='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 alias ds='du -sh */ | sort -h'
 # alias git=hub
@@ -131,6 +136,7 @@ alias postman='nohup /usr/local/Postman/Postman &>/dev/null &'
 alias studio='nohup ~/apps/android-studio/bin/studio.sh &>/dev/null &'
 alias node10='sudo docker run --rm -ti node:10-alpine -v $(pwd):/'
 alias refresh-input='sudo udevadm trigger'
+alias chrome-arlo='google-chrome --disable-web-security --user-data-dir="/home/kyle/.arlo/chrome-data"'
 export tlmgr=/usr/local/texlive/2019/bin/x86_64-linux/tlmgr
 
 eval "$(dircolors ~/.dircolors)"
