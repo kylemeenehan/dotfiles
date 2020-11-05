@@ -13,6 +13,7 @@ set ignorecase    " Ignore case for search
 set incsearch     " do incremental searching
 set nohlsearch    " Don't persist highlighting for search
 set clipboard=unnamedplus
+set clipboard+=unnamed
 set clipboard+=ideaput
 
 " Quicker window movement
