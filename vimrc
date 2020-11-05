@@ -61,6 +61,7 @@ Plugin 'alvan/vim-closetag'
 Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 
+Plugin 'vimwiki/vimwiki'
 
 Plugin 'altercation/vim-colors-solarized'
 
