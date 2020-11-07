@@ -63,7 +63,8 @@ let g:SimpylFold_docstring_preview=1
 
 Plugin 'vimwiki/vimwiki'
 
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
+Plugin 'doums/darcula'
 
 call vundle#end()
 
@@ -180,8 +181,8 @@ nnoremap <space> za
 syntax enable
 syntax on
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+" let g:solarized_termcolors=256
+colorscheme darcula
 
 let g:asmsyntax="ia64"
 

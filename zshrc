@@ -24,9 +24,7 @@ plugins=(
   zsh_reload
 )
 
-# TODO: configure zsh tmux plugin
 # TODO: investigate the vi-mode plugin
-#
 
 ZSH_TMUX_AUTOSTART=true
 
@@ -42,26 +40,26 @@ export GOBIN=/usr/local/go/bin
 
 path=(
   $path
-  :$HOME/bin
-  :/usr/local/bin
-  :$HOME/Android/Sdk/platform-tools
-  :$HOME/Android/Sdk/tools
-  :$HOME/Android/Sdk/build-tools/27.0.3
-  :$HOME/Library/flutter/bin
-  :$HOME/anaconda3/bin
-  :$HOME/.sonar-scanner/bin
-  :$HOME/.local/bin
-  :$HOME/bin/handy-scripts
-  :$HOME/lib/flutter/bin
-  :$HOME/lib/flutter/bin
-  :/sbin
-  :"/miniconda3/bin:$HOME/.pub-cache/bin"
-  :"/usr/local/lib/node_modules"
-  :/usr/local/go/bin
-  :/snap/bin
-  :/usr/local/texlive/2019/bin/x86_64-linux
-  :$ANDROID_HOME/emulator:$ANDROID_HOME/tools
-  :/Applications/kitty.app/Contents/MacOS
+  $HOME/bin
+  /usr/local/bin
+  $HOME/Android/Sdk/platform-tools
+  $HOME/Android/Sdk/tools
+  $HOME/Android/Sdk/build-tools/27.0.3
+  $HOME/Library/flutter/bin
+  $HOME/anaconda3/bin
+  $HOME/.sonar-scanner/bin
+  $HOME/.local/bin
+  $HOME/bin/handy-scripts
+  $HOME/lib/flutter/bin
+  $HOME/lib/flutter/bin
+  /sbin
+  "/miniconda3/bin:$HOME/.pub-cache/bin"
+  "/usr/local/lib/node_modules"
+  /usr/local/go/bin
+  /snap/bin
+  /usr/local/texlive/2019/bin/x86_64-linux
+  $ANDROID_HOME/emulator:$ANDROID_HOME/tools
+  /Applications/kitty.app/Contents/MacOS
 )
 
 export ANDROID_HOME=/home/kyle/Android/Sdk
@@ -96,6 +94,9 @@ export NVM_DIR="$HOME/.nvm"
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 eval $(thefuck --alias)
+
+# vi mode
+bindkey -v
 
 # Performance profiling
 # zprof
