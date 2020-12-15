@@ -3,7 +3,7 @@
 # zmodload zsh/zprof
 # setopt promptsubst
 
-export ZSH="/Users/kmeenehan/.oh-my-zsh"
+export ZSH="/home/kyle/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
@@ -35,7 +35,7 @@ source $ZSH/oh-my-zsh.sh
 
 export NODE_OPTIONS=--max_old_space_size=4096
 export GOOGLE_APPLICATION_CREDENTIALS="/Users/kylemeenehan/credentials/gcp-1.json"
-export SHELL="/bin/zsh"
+export SHELL="/usr/bin/zsh"
 export GOBIN=/usr/local/go/bin
 
 path=(
@@ -59,7 +59,7 @@ path=(
   /snap/bin
   /usr/local/texlive/2019/bin/x86_64-linux
   $ANDROID_HOME/emulator:$ANDROID_HOME/tools
-  /Applications/kitty.app/Contents/MacOS
+#  /Applications/kitty.app/Contents/MacOS
 )
 
 export ANDROID_HOME=/home/kyle/Android/Sdk

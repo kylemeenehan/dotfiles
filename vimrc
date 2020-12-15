@@ -66,6 +66,8 @@ Plugin 'vimwiki/vimwiki'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'doums/darcula'
 
+Plugin 'neoclide/coc.nvim'
+
 call vundle#end()
 
 filetype plugin indent on " Vundle is done now, we can move on with life
