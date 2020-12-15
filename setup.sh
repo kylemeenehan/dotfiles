@@ -22,3 +22,4 @@ for link in "${homelinks[@]}"; do
 done
 
 ln -sf "$DIR/vim/ftplugin" "$HOME/.vim/ftplugin"
+ln -sf "$DIR/config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
