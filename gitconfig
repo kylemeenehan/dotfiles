@@ -40,3 +40,5 @@
   protocol = git
 [pager]
 	branch = false
+[pull]
+	ff = only
