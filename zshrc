@@ -59,6 +59,7 @@ path=(
   /snap/bin
   /usr/local/texlive/2019/bin/x86_64-linux
   $ANDROID_HOME/emulator:$ANDROID_HOME/tools
+  $HOME/.npm-global/bin
 #  /Applications/kitty.app/Contents/MacOS
 )
 
@@ -73,8 +74,8 @@ alias ds='du -sh */ | sort -h'
 alias coffee='caffeinate -t 7200'
 alias spelltex='aspell check --mode=tex'
 alias refresh-input='sudo udevadm trigger'
-# alias chrome-arlo='google-chrome --disable-web-security --user-data-dir="/home/kyle/.arlo/chrome-data"'
-alias chrome-arlo='open -a "Google Chrome" --args --disable-web-security --user-data-dir=$HOME/.arlo/chrome'
+alias chrome-arlo='google-chrome --disable-web-security --user-data-dir="/home/kyle/.arlo/chrome-data"'
+# alias chrome-arlo='open -a "Google Chrome" --args --disable-web-security --user-data-dir=$HOME/.arlo/chrome'
 export tlmgr=/usr/local/texlive/2019/bin/x86_64-linux/tlmgr
 
 # eval "$(dircolors ~/.dircolors)"
